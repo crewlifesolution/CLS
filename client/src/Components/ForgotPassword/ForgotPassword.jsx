@@ -1,5 +1,5 @@
 import React from "react";
-import "./register.css";
+import "./ForgotPassword.css";
 import { Link } from "react-router-dom";
 
 //Importing the assets
@@ -9,9 +9,9 @@ import { MdMarkEmailRead } from "react-icons/md";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 
-const register = () => {
+const ForgotPassword = () => {
   return (
-    <div className="registerPage flex">
+    <div className="ForgotPasswordPage flex">
       <div className="container flex">
         <div className="videoDiv">
           <video src={video} autoPlay muted loop></video>
@@ -34,12 +34,10 @@ const register = () => {
         <div className="formDiv flex">
           <div className="headerDiv">
             <img src={logo} alt="Logo Image" />
-            <h3>Let Us Know You</h3>
+            <h3>Reset Password</h3>
           </div>
-          {/* Creating the register form */}
+          {/* Creating the forgot password form */}
           <form action="" className="form grid">
-            <span className="showMessage">register Status</span>
-
             <div className="inputDiv">
               <label htmlFor="email">Email</label>
               <div className="input flex">
@@ -48,18 +46,14 @@ const register = () => {
               </div>
             </div>
 
-            <div className="inputDiv">
-              <label htmlFor="password">Password</label>
-              <div className="input flex">
-                <BsFillShieldLockFill className="icon" />
-                <input type="text" id="password" placeholder="Enter Password" />
-              </div>
-            </div>
-
             <button type="submit" className="btn">
-              <span>register</span>
+              <span>Send Code</span>
               <AiOutlineSwapRight className="icon" />
             </button>
+
+            <span className="forgotPassword">
+              Did not recieve code? <Link to="">Resend Code</Link>
+            </span>
           </form>
         </div>
       </div>
@@ -67,4 +61,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default ForgotPassword;

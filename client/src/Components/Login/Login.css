@@ -1,3 +1,421 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Default stylings */
+/*:root {
+  --primaryColor: #0c1f34;
+  --hoverColor: #ffbd59;
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(113, 11%, 85%);
+  --inputColor: hsl(330, 12%, 97%);
+  --inputColor: hsl(154, 14%, 90%);
+
+  /*Font*/
+/*--biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+html {
+  font-size: 90%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  font-size: var(--h2FontSize);
+  cursor: pointer;
+}
+
+/* .img .video {
+  height: 92vh;
+  width: 100%;
+} */
+
+/*.message {
+  display: none;
+}
+
+.showMessage {
+  display: block;
+  color: var(--whiteColor);
+  padding: 10px;
+  background: rgb(255, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.showMessage {
+  display: block;
+  color: var(--blackColor);
+  background: #ffff;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--blackColor);
+  background: var(--hoverColor);
+}
+
+.btn .icon {
+  margin-left: 0.5rem;
+}
+
+.btn:hover {
+  color: var(--primaryColor);
+  background: var(--hoverColor);
+}
+
+/* //Pages styling */
+/*.loginPage {
+  height: 600px;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 7px 50px rgb(214, 223, 213);
+
+  .container {
+    height: 95vh;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: #0c1f34;
+
+    .videoDiv {
+      position: relative;
+      display: flex;
+      flex-basis: 70%;
+      width: 100%;
+      height: 100%;
+      /* padding: 0 1.5rem; */
+/*text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0;
+      border-radius: 10px;
+      overflow: hidden;
+
+      video .footerDiv {
+        position: absolute;
+      }
+
+      video {
+        height: 100%;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        object-fit: cover;
+      }
+
+      .textDiv {
+        position: absolute;
+        width: 90%;
+
+        .title {
+          color: var(--whiteColor);
+          font-size: 35px;
+          font-weight: 1000;
+          text-align: left;
+          left: 5%;
+          position: absolute;
+        }
+
+        p {
+          color: var(--whiteColor);
+          /* padding: 2rem; */
+/*font-weight: 800;
+          position: absolute;
+          left: 5%;
+          bottom: 100%;
+        }
+      }
+
+      .footerDiv {
+        bottom: 10px;
+        padding: 0 1rem;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.248);
+        left: 10px;
+        right: 10px;
+        justify-content: space-between;
+        backdrop-filter: blur(1px);
+        border-radius: 10px;
+
+        .text {
+          color: var(--whiteColor);
+        }
+
+        .btn {
+          background: var(--hoverColor);
+          color: var(--blackColor);
+          padding: 0.8rem 1.5rem;
+          border-radius: 10px;
+          font-weight: 400;
+          transition: 0.3s ease;
+
+          &:hover {
+            background: var(--hoverColor);
+            color: var(--blackColor);
+          }
+        }
+      }
+    }
+
+    .formDiv {
+      flex-basis: 50%;
+      margin: auto;
+      flex-direction: column;
+      gap: 1.5rem;
+      transform: translate(-1rem);
+
+      .headerDiv {
+        text-align: center;
+        padding: 1.5rem 0;
+
+        img {
+          height: 100px;
+          width: 150px;
+          padding-bottom: 0.5rem;
+        }
+
+        h3 {
+          font-size: 25px;
+          color: var(--whiteColor);
+          font-weight: 600;
+        }
+      }
+
+      .form {
+        gap: 1rem;
+
+        .inputDiv {
+          .icon {
+            color: var(--blackColor);
+          }
+
+          input {
+            background: none;
+            outline: none;
+            border: none;
+            width: 200px;
+          }
+
+          label {
+            color: var(--whiteColor);
+            font-weight: 400;
+            font-size: 14px;
+            padding: 0.5rem 0;
+            display: block;
+          }
+
+          .input {
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--inputColor);
+            border-radius: 10px;
+          }
+        }
+
+        .btn {
+          padding: 0.8rem;
+          background: var(--hoverColor);
+          border-radius: 10px;
+          color: var(--blackColor);
+          align-items: center;
+          margin: auto;
+          justify-content: center;
+          font-size: 16px;
+          width: 100%;
+          gap: 0.5rem;
+          transition: 0.3s ease;
+
+          .icon {
+            font-size: 25px;
+            transition: 0.3s ease;
+          }
+
+          &:hover {
+            background: var(--hoverColor);
+            color: var(--blackColor);
+
+            .icon {
+              color: var(--blackColor);
+              transform: translateX(5px);
+            }
+          }
+        }
+
+        .forgotPassword {
+          font-size: 13px;
+          color: var(--whiteColor);
+          opacity: 0.7px;
+          text-align: center;
+
+          a {
+            text-decoration: underline;
+            cursor: pointer;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* //Making it mobile responsive */
+/*@media screen and (max-width: 602px) {
+  .loginPage {
+    .container {
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      padding: 1.5rem;
+
+      .videoDiv {
+        width: 100%;
+        .textDiv {
+          .title {
+            font-size: 20px;
+          }
+
+          .p {
+            padding: 1rem;
+          }
+        }
+
+        .footerDiv {
+          .text {
+            font-size: 12px;
+          }
+
+          .btn {
+            padding: 0.4rem 1.5rem;
+          }
+        }
+      }
+
+      .formDiv {
+        gap: 1rem;
+        transform: translateY(-0.5rem);
+
+        .headerDiv {
+          padding: 1rem 0;
+
+          img {
+            width: 40px;
+          }
+
+          h3 {
+            font-size: 20px;
+          }
+        }
+
+        .form {
+          gap: 0.5rem;
+
+          .inputDiv {
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .loginPage {
+    .container {
+      .videoDiv {
+        .textDiv {
+          .title {
+            font-size: 25px;
+          }
+
+          .p {
+            padding: 1rem;
+          }
+        }
+
+        .footerDiv {
+          .text {
+            font-size: 12px;
+          }
+
+          .btn {
+            padding: 0.8rem 1.5rem;
+          }
+        }
+      }
+
+      .formDiv {
+        .headerDiv {
+          padding: 1.5rem 0;
+
+          h3 {
+            font-size: 20px;
+          }
+        }
+
+        .form {
+          .inputDiv {
+            input {
+              width: 100%;
+              max-width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 927px) {
+  .loginPage {
+    .container {
+      width: 85%;
+    }
+  }
+}*/
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap");
 
 * {
@@ -56,10 +474,10 @@ li {
   cursor: pointer;
 }
 
-.img .video {
+/* .img .video {
   height: auto;
   width: 100%;
-}
+} */
 
 .message {
   display: none;
@@ -88,7 +506,8 @@ li {
   cursor: pointer;
   border-radius: 8px;
   padding: 0.8rem 1rem;
-  color: var(--greyText);
+  color: var(--blackColor);
+  background: var(--hoverColor);
 }
 
 .btn .icon {
@@ -102,7 +521,7 @@ li {
 
 /* //Pages styling */
 .loginPage {
-  height: 100vh;
+  height: 600px;
   width: 100%;
   margin: auto;
   border-radius: 10px;
@@ -110,25 +529,26 @@ li {
   box-shadow: 0 7px 50px rgb(214, 223, 213);
 
   .container {
-    height: 75vh;
+    height: 95vh;
     width: 70%;
     margin: auto;
     justify-content: space-between;
     border-radius: 10px;
-    background: hsl(0, 0%, 91%);
+    background: #0c1f34;
 
     .videoDiv {
       position: relative;
       display: flex;
-      flex-basis: 50%;
-      width: 70%;
+      flex-basis: 70%;
+      width: 100%;
       height: 100%;
-      padding: 0 1.5rem;
+      /* padding: 0 1.5rem; */
       text-align: center;
       justify-content: center;
       flex-direction: column;
-      margin: auto;
+      margin: 0;
       border-radius: 10px;
+      overflow: hidden;
       overflow: hidden;
 
       video .footerDiv {
@@ -136,28 +556,33 @@ li {
       }
 
       video {
-        height: 75vh;
+        height: 100%;
         width: 100%;
+        margin-left: 0;
+        padding-left: 0;
         object-fit: cover;
-        top: 0;
-        bottom: 75vh;
-        right: 0;
-        left: 0;
       }
 
       .textDiv {
-        position: relative;
+        position: absolute;
+        width: 90%;
 
         .title {
           color: var(--whiteColor);
           font-size: 35px;
-          font-weight: 800;
+          font-weight: 1000;
+          text-align: left;
+          left: 5%;
+          position: absolute;
         }
 
         p {
           color: var(--whiteColor);
-          padding: 1rem;
-          font-weight: 400;
+          /* padding: 2rem; */
+          font-weight: 800;
+          position: absolute;
+          left: 5%;
+          bottom: 100%;
         }
       }
 
@@ -177,8 +602,8 @@ li {
         }
 
         .btn {
-          background: var(--whiteColor);
-          color: var(--primaryColor);
+          background: var(--hoverColor);
+          color: var(--blackColor);
           padding: 0.8rem 1.5rem;
           border-radius: 10px;
           font-weight: 400;
@@ -204,13 +629,14 @@ li {
         padding: 1.5rem 0;
 
         img {
-          width: 60px;
+          height: 100px;
+          width: 150px;
           padding-bottom: 0.5rem;
         }
 
         h3 {
           font-size: 25px;
-          color: var(--blackColor);
+          color: var(--whiteColor);
           font-weight: 600;
         }
       }
@@ -220,7 +646,7 @@ li {
 
         .inputDiv {
           .icon {
-            color: var(--greyText);
+            color: var(--blackColor);
           }
 
           input {
@@ -231,7 +657,7 @@ li {
           }
 
           label {
-            color: var(--blackColor);
+            color: var(--whiteColor);
             font-weight: 400;
             font-size: 14px;
             padding: 0.5rem 0;
@@ -248,9 +674,9 @@ li {
 
         .btn {
           padding: 0.8rem;
-          background: var(--primaryColor);
+          background: var(--hoverColor);
           border-radius: 10px;
-          color: var(--whiteColor);
+          color: var(--blackColor);
           align-items: center;
           margin: auto;
           justify-content: center;
@@ -277,7 +703,7 @@ li {
 
         .forgotPassword {
           font-size: 13px;
-          color: var(--blackColor);
+          color: var(--whiteColor);
           opacity: 0.7px;
           text-align: center;
 

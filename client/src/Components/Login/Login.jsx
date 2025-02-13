@@ -8,8 +8,13 @@ import logo from "../../LoginAssets/logo.png";
 import { FaUserShield } from "react-icons/fa6";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <div className="loginPage flex">
       <div className="container flex">
@@ -56,13 +61,17 @@ const Login = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn flex">
+            <button
+              type="button"
+              onClick={() => navigate("/homepage")}
+              className="btn flex"
+            >
               <span>Login</span>
               <AiOutlineSwapRight className="icon" />
             </button>
 
             <span className="forgotPassword">
-              Forgot Your Password? <a href="">Click Here</a>
+              Forgot Your Password? <Link to="/forgotPassword">Click Here</Link>
             </span>
           </form>
         </div>

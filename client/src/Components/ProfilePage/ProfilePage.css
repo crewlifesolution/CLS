@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Default stylings */
+:root {
+  --primaryColor: #0c1f34;
+  --hoverColor: #ffbd59;
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(113, 11%, 85%);
+  --inputColor: hsl(330, 12%, 97%);
+  --inputColor: hsl(154, 14%, 90%);
+
+  /*Font*/
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+html {
+  font-size: 90%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  font-size: var(--h2FontSize);
+  cursor: pointer;
+}
+
+/* .img .video {
+  height: auto;
+  width: 100%;
+} */
+
+.message {
+  display: none;
+}
+
+.showMessage {
+  display: block;
+  color: var(--whiteColor);
+  padding: 10px;
+  background: rgb(255, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.showMessage {
+  display: block;
+  color: var(--blackColor);
+  background: #ffff;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--blackColor);
+  background: var(--hoverColor);
+}
+
+.btn .icon {
+  margin-left: 0.5rem;
+}
+
+.btn:hover {
+  color: var(--primaryColor);
+  background: var(--hoverColor);
+}
+
+.profile-page {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.profile-header {
+  background: #0c1f34;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background: #eee;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: var(--hoverColor, #ffbd59);
+  border: none;
+  border-radius: 4px;
+  color: var(--blackColor, #0c1f34);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #e0a73a;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0c1f34;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.top-nav-left img {
+  width: 90px;
+  height: 60px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: left;
+  align-items: left;
+}
+
+.top-nav-right {
+  position: relative;
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+/* Dropdown for User Options */
+.user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.user-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-dropdown li {
+  border-bottom: 1px solid #eee;
+}
+
+.user-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.user-dropdown li a,
+.user-dropdown li button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #0c1f34;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user-dropdown li a:hover,
+.user-dropdown li button:hover {
+  background: var(--hoverColor);
+  color: var(--primaryColor);
+}
+
+/* Main Dashboard Layout */
+.dashboard-main {
+  display: flex;
+  margin-top: 70px; /* Space for the top nav */
+}
+
+/* Left Sidebar Navigation */
+.left-sidebar {
+  width: 200px;
+  background: #f5f5f5;
+  padding: 20px;
+  height: calc(100vh - 70px);
+}
+
+.left-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.left-sidebar nav ul li a {
+  text-decoration: none;
+  color: #0c1f34;
+  font-size: 16px;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+}

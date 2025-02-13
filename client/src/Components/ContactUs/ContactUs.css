@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Default stylings */
+:root {
+  --primaryColor: #0c1f34;
+  --hoverColor: #ffbd59;
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --greyText: hsl(0, 0%, 75%);
+  --bgColor: hsl(113, 11%, 85%);
+  --inputColor: hsl(330, 12%, 97%);
+  --inputColor: hsl(154, 14%, 90%);
+
+  /*Font*/
+  --biggestFontSize: 2.5rem;
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem;
+  --h3FontSize: 1rem;
+  --normalFontSize: 0.938rem;
+  --smallFontSize: 0.813rem;
+  --smallestFontSize: 0.75rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+html {
+  font-size: 90%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.icon {
+  font-size: var(--h2FontSize);
+  cursor: pointer;
+}
+
+/* .img .video {
+  height: auto;
+  width: 100%;
+} */
+
+.message {
+  display: none;
+}
+
+.showMessage {
+  display: block;
+  color: var(--whiteColor);
+  padding: 10px;
+  background: rgb(255, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.showMessage {
+  display: block;
+  color: var(--blackColor);
+  background: #ffff;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--blackColor);
+  background: var(--hoverColor);
+}
+
+.btn .icon {
+  margin-left: 0.5rem;
+}
+
+.btn:hover {
+  color: var(--primaryColor);
+  background: var(--hoverColor);
+}
+
+/* //Pages styling */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: #0c1f34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.NavLogo {
+  img {
+    width: 80px;
+    height: 80px;
+    position: left;
+    left: 0px;
+    cursor: pointer;
+    align-items: left;
+    left: 0%;
+  }
+}
+
+.navbar a {
+  position: relative;
+  font-size: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navbar a:hover {
+  color: var(--hoverColor);
+  font-size: 12px;
+  transition: 0.5s ease;
+}
+/*Home page styling */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0c1f34;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.top-nav-left img {
+  width: 90px;
+  height: 60px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  position: left;
+  align-items: left;
+}
+
+.top-nav-right {
+  position: relative;
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+/* Dropdown for User Options */
+.user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.user-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-dropdown li {
+  border-bottom: 1px solid #eee;
+}
+
+.user-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.user-dropdown li a,
+.user-dropdown li button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #0c1f34;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user-dropdown li a:hover,
+.user-dropdown li button:hover {
+  background: var(--hoverColor);
+  color: var(--primaryColor);
+}
+
+/* Main Dashboard Layout */
+.dashboard-main {
+  display: flex;
+  margin-top: 70px; /* Space for the top nav */
+}
+
+/* Left Sidebar Navigation */
+.left-sidebar {
+  width: 200px;
+  background: #f5f5f5;
+  padding: 20px;
+  height: calc(100vh - 70px);
+}
+
+.left-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.left-sidebar nav ul li a {
+  text-decoration: none;
+  color: #0c1f34;
+  font-size: 16px;
+}
+
+/*Contact page styling */
+/* Main container */
+.contact-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Left Section (Form) */
+.form-section {
+  flex: 1;
+  padding: 40px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+/* Textarea */
+.form-textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Checkbox */
+.form-consent {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.consent-checkbox {
+  margin-right: 10px;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 0.8rem;
+  background: var(--hoverColor);
+  border-radius: 10px;
+  border: none;
+  color: var(--blackColor);
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  font-size: 16px;
+  width: 100%;
+  gap: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.submit-button:hover {
+  background: var(--hoverColor);
+  color: var(--blackColor);
+}
+
+/* Right Section (Contact Info) */
+.info-section {
+  flex: 1;
+  background: #f8f8f8;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Image instead of Map */
+.info-image {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Contact Details */
+.info-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.info-details p,
+.info-location p,
+.info-hours p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Email Link */
+.info-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.info-details a:hover {
+  text-decoration: underline;
+}
