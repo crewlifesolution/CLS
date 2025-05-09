@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import "./ProfilePage.css";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import HomePage from "../HomePage/HomePage";
+import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
   //Making the constants

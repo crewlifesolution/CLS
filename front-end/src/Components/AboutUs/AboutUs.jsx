@@ -62,7 +62,7 @@ const AboutUs = () => {
                 <Link to="/homepage">Home</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/servicepage">Services</Link>
               </li>
               <li>
                 <Link to="/aboutus">About Us</Link>
@@ -90,13 +90,66 @@ const AboutUs = () => {
             </p>
 
             <div className="about-link">
-              <Link to="/contact">Get In Touch</Link>
+              <Link to="/ContactUs">Get In Touch</Link>
             </div>
           </div>
 
           <div class="About-img">
             <img src={image} />
           </div>
+        </section>
+
+        {/*The Packages section*/}
+        <section>
+          <h2>Explore Our Packages</h2>
+          <div class="package">
+            <div className="package-card">
+              <h3>Basic Package</h3>
+              <h4>AED 20 monthly</h4>
+              <p>
+                <ul>
+                  <li>Leave Bidding</li>
+                  <li>Personalized Calender</li>
+                  <li>Laundry Services</li>
+                  <li>AI assistance</li>
+                </ul>
+              </p>
+
+              <button>Buy Now</button>
+            </div>
+
+            <div className="package-card">
+              <h3>Standard Package</h3>
+              <h2>AED 30 monthly</h2>
+              <p>
+                <ul>
+                  <li>Basic Package Features</li>
+                  <li>Roster Bidding</li>
+                  <li>Weekend Bidding</li>
+                  <li>Fatigue Management</li>
+                </ul>
+              </p>
+
+              <button>Buy Now</button>
+            </div>
+
+            <div className="package-card">
+              <h3>Premium Package</h3>
+              <h2>AED 50 monthly</h2>
+              <p>
+                <ul>
+                  <li>Standard Package Features</li>
+                  <li>Car and driver license registration</li>
+                  <li>Travel and Holiday Planning</li>
+                  <li>Chaffer Services</li>
+                </ul>
+              </p>
+
+              <button>Buy Now</button>
+            </div>
+          </div>
+
+          {/*Making the package page*/}
         </section>
       </div>
     </div>

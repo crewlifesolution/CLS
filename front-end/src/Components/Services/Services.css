@@ -282,14 +282,33 @@ li {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+
+  /*chatgpt code*/
+  justify-content: center;
+
+  gap: 5px;
+  padding: 10px;
 }
 
 .service-card {
-  background: white;
+  /* background: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out; */
+
+  /*chatgpt code*/
+  width: 250px; /* Ensures all cards have the same width */
+  height: 450px; /* Ensures all cards have the same height */
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Balances content inside */
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center; /* Ensures text alignment is consistent */
+  padding: 20px;
 }
 
 .service-card:hover {

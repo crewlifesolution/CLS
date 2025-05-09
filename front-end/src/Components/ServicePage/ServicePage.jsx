@@ -1,20 +1,16 @@
 import React from "react";
-import "./Services.css";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import logo from "../../LoginAssets/logo.png";
-import { Link } from "react-router-dom";
-import { useState } from "react";
 import HomePage from "../HomePage/HomePage";
-import Fatigue from "../../ServiceAssets/Fatigue.png";
-import Laundry from "../../ServiceAssets/Laundry.png";
-import Fooddelivery from "../../ServiceAssets/Fooddelivery.png";
-import Leave from "../../ServiceAssets/Leave.png";
-import Roster from "../../ServiceAssets/Roster.png";
-import calender from "../../ServiceAssets/calender.png";
-
-const Services = () => {
+import { FaUserCircle } from "react-icons/fa";
+import Bidding from "../../ServicePageAssets/Bidding.png";
+import Wellbeing from "../../ServicePageAssets/Wellbeing.png";
+import Lifestyle from "../../ServicePageAssets/Lifestyle.png";
+import "./ServicePage.css";
+const ServicePage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const username = localStorage.getItem("username") || "user";
@@ -30,54 +26,39 @@ const Services = () => {
     navigate("/");
   };
 
-  const pageservice = [
+  const pageservices = [
     {
-      title: "Leave Bidding",
+      title: "Bidding Services",
       description:
-        "Seamlessly manage your time off with our leave bidding features",
-      image: Leave,
+        "Explore all our services related to bidding and schedule management",
+      image: Bidding,
+      link: "/biddingservices",
     },
 
     {
-      title: "Roster Bidding",
+      title: "Personal Wellbeing Services",
       description:
-        "Take control of your work schedule with our dynamic roster management suited to your needs",
-      image: Roster,
+        "Your well-being is our top priority, explore services that help you maintain your healthy lifestyle",
+      image: Wellbeing,
+      link: "/wellbeingservices",
     },
 
     {
-      title: "Personal and Professional Calendar",
+      title: "Lifestyle and Delivery Services",
       description:
-        "Stay organized with a comprehensive personal and profesisonal calender to keep you on track and well-balanced.",
-      image: calender,
-    },
-
-    {
-      title: "Fatigue Management",
-      description:
-        "Monitor and manage your fatigue levels with data-driven insights",
-      image: Fatigue,
-    },
-
-    {
-      title: "Laundry Services",
-      description:
-        "Get your laundry done amidst your busy schedules by finding nearby cost-effective solutions",
-      image: Laundry,
-    },
-
-    {
-      title: "Food Delivery Services",
-      description:
-        "Order your cake and drinks from your nearest and favorite locations and bakeries",
-      image: Fooddelivery,
+        "Explore recreational services and seamless delivery options to make your events better",
+      image: Lifestyle,
+      link: "/lifestyleservices",
     },
   ];
+
+  const handleNavigate = (link) => {
+    navigate(link);
+  };
 
   return (
     <div className="dashboard-container">
       {/* Top Navigation Bar */}
-
       <header className="top-nav">
         <div className="top-nav-left">
           <Link to="/homepage">
@@ -112,7 +93,7 @@ const Services = () => {
                 <Link to="/homepage">Home</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/servicepage">Services</Link>
               </li>
               <li>
                 <Link to="/aboutus">About Us</Link>
@@ -134,7 +115,7 @@ const Services = () => {
           </div>
 
           <div className="services-grid">
-            {pageservice.map((service, index) => (
+            {pageservices.map((service, index) => (
               <div key={index} className="service-card">
                 <img
                   src={service.image}
@@ -144,6 +125,12 @@ const Services = () => {
                 <div className="service-content">
                   <h3 className="service-title">{service.title} &gt;</h3>
                   <p className="service-description">{service.description}</p>
+                  <button
+                    className="service-button"
+                    onClick={() => handleNavigate(service.link)}
+                  >
+                    Know More
+                  </button>
                 </div>
               </div>
             ))}
@@ -154,4 +141,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicePage;

@@ -1,24 +1,25 @@
 import React from "react";
-import "./Services.css";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
-import logo from "../../LoginAssets/logo.png";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import logo from "../../LoginAssets/logo.png";
+import { FaUserCircle } from "react-icons/fa";
 import HomePage from "../HomePage/HomePage";
+import "./WellbeingServices.css";
 import Fatigue from "../../ServiceAssets/Fatigue.png";
 import Laundry from "../../ServiceAssets/Laundry.png";
-import Fooddelivery from "../../ServiceAssets/Fooddelivery.png";
-import Leave from "../../ServiceAssets/Leave.png";
-import Roster from "../../ServiceAssets/Roster.png";
 import calender from "../../ServiceAssets/calender.png";
+import Car from "../../ServiceAssets/Car.png";
 
-const Services = () => {
-  const navigate = useNavigate();
+const WellbeingServices = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const username = localStorage.getItem("username") || "user";
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
 
   const handleUserIconClick = () => {
     setShowDropdown((prev) => !prev);
@@ -30,33 +31,23 @@ const Services = () => {
     navigate("/");
   };
 
-  const pageservice = [
-    {
-      title: "Leave Bidding",
-      description:
-        "Seamlessly manage your time off with our leave bidding features",
-      image: Leave,
-    },
-
-    {
-      title: "Roster Bidding",
-      description:
-        "Take control of your work schedule with our dynamic roster management suited to your needs",
-      image: Roster,
-    },
-
-    {
-      title: "Personal and Professional Calendar",
-      description:
-        "Stay organized with a comprehensive personal and profesisonal calender to keep you on track and well-balanced.",
-      image: calender,
-    },
-
+  /*Creating the wellbeing section*/
+  const wellbeingservices = [
     {
       title: "Fatigue Management",
-      description:
-        "Monitor and manage your fatigue levels with data-driven insights",
+      description: "Monitor and manage your fatigue levels with our solutions",
       image: Fatigue,
+      popupMessage:
+        "To access fatigue management, please purchase Standard Package for AED 150 monthly",
+    },
+
+    {
+      title: "Personal Calendar",
+      description:
+        "Stay organized with a comprehensive personal and profesisonal calender to keep you on track and well-balanced",
+      image: calender,
+      popupMessage:
+        "To access personalized calender service, please purchase Basic Package for AED 50 monthly",
     },
 
     {
@@ -64,20 +55,40 @@ const Services = () => {
       description:
         "Get your laundry done amidst your busy schedules by finding nearby cost-effective solutions",
       image: Laundry,
+      popupMessage:
+        "To access laundry services, please purchase Basic Package for AED 50 monthly",
     },
 
     {
-      title: "Food Delivery Services",
-      description:
-        "Order your cake and drinks from your nearest and favorite locations and bakeries",
-      image: Fooddelivery,
+      title: "Car and Driver License Registration",
+      description: "Get your car and driver's license registered with ease",
+      image: Car,
+      popupMessage:
+        "To access car and driver license service, please purchase Premium Package for AED 200 monthly",
     },
   ];
 
+  const handleServiceClick = (message) => {
+    setPopupMessage(message);
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div className="dashboard-container">
-      {/* Top Navigation Bar */}
+      {showPopup && (
+        <div className="popup-overlay" onClick={closePopup}>
+          <div className="popup-box" onClick={(e) => e.stopPropagation()}>
+            <p>{popupMessage}</p>
+            <button onClick={closePopup}>Close</button>
+          </div>
+        </div>
+      )}
 
+      {/* Top Navigation Bar */}
       <header className="top-nav">
         <div className="top-nav-left">
           <Link to="/homepage">
@@ -112,7 +123,7 @@ const Services = () => {
                 <Link to="/homepage">Home</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/servicepage">Services</Link>
               </li>
               <li>
                 <Link to="/aboutus">About Us</Link>
@@ -125,7 +136,7 @@ const Services = () => {
         </aside>
 
         {/* Main Services Page */}
-        <div className="services-container">
+        <div className="wservices-container">
           <div className="services-header">
             <h3 className="services-subtitle">Elevate Your Crew Life</h3>
             <h2 className="services-title">
@@ -134,8 +145,12 @@ const Services = () => {
           </div>
 
           <div className="services-grid">
-            {pageservice.map((service, index) => (
-              <div key={index} className="service-card">
+            {wellbeingservices.map((service, index) => (
+              <div
+                key={index}
+                className="service-card"
+                onClick={() => handleServiceClick(service.popupMessage)}
+              >
                 <img
                   src={service.image}
                   alt={service.title}
@@ -154,4 +169,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default WellbeingServices;

@@ -302,7 +302,7 @@ const ContactUs = () => {
                 <Link to="/homepage">Home</Link>
               </li>
               <li>
-                <Link to="/services">Services</Link>
+                <Link to="/servicepage">Services</Link>
               </li>
               <li>
                 <Link to="/aboutus">About Us</Link>
@@ -420,7 +420,7 @@ const ContactUs = () => {
             {/* Location Section */}
             <div className="info-location">
               <h3>Location</h3>
-              <p>Dubai, UAE</p>
+              <p>United Arab Emirates</p>
             </div>
 
             {/* Hours Section */}

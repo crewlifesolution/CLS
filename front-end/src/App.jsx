@@ -9,9 +9,15 @@ import ProfilePage from "./Components/ProfilePage/ProfilePage";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Services from "./Components/Services/Services";
 import ContactUs from "./Components/ContactUs/ContactUs";
+import ServicePage from "./Components/ServicePage/ServicePage";
+import BiddingServices from "./Components/BiddingServices/BiddingServices";
+import LifestyleServices from "./Components/LifestyleServices/LifestyleServices";
+import WellbeingServices from "./Components/WellbeingServices/WellbeingServices";
 
 //Import the react router dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 //Routers
 const router = createBrowserRouter([
@@ -104,12 +110,63 @@ const router = createBrowserRouter([
       </div>
     ),
   },
+
+  {
+    path: "/servicepage",
+    element: (
+      <div>
+        <ServicePage />
+      </div>
+    ),
+  },
+
+  {
+    path: "/biddingservices",
+    element: (
+      <div>
+        <BiddingServices />
+      </div>
+    ),
+  },
+
+  {
+    path: "/lifestyleservices",
+    element: (
+      <div>
+        <LifestyleServices />
+      </div>
+    ),
+  },
+
+  {
+    path: "/wellbeingservices",
+    element: (
+      <div>
+        <WellbeingServices />
+      </div>
+    ),
+  },
 ]);
 
 function App() {
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("/api/message") // Uses proxy in package.json to avoid CORS issues
+      .then((response) => {
+        setMessage(response.data.message);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
   return (
     <div>
       <RouterProvider router={router} />
+
+      <p>BackEnd Response: {message || "Loading.."}</p>
     </div>
   );
 }

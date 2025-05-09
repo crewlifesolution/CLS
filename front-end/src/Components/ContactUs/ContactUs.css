@@ -256,8 +256,9 @@ li {
 /* Main container */
 .contact-container {
   display: flex;
-  max-width: 1100px;
-  margin: 40px auto;
+  max-width: 820px;
+  width: 100%;
+  margin: auto;
   background: #fff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -343,11 +344,14 @@ li {
   width: 100%;
   gap: 0.5rem;
   transition: 0.3s ease;
+  margin-top: 5px;
 }
 
 .submit-button:hover {
-  background: var(--hoverColor);
-  color: var(--blackColor);
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+  cursor: pointer;
+  font-size: 18px;
 }
 
 /* Right Section (Contact Info) */
@@ -364,13 +368,15 @@ li {
 /* Image instead of Map */
 .info-image {
   width: 100%;
-  max-width: 250px;
+  max-width: 300px;
+  height: 250px;
   margin-bottom: 20px;
 }
 
 .image {
   width: 100%;
   border-radius: 10px;
+  height: 250px;
 }
 
 /* Contact Details */
@@ -397,4 +403,47 @@ li {
 
 .info-details a:hover {
   text-decoration: underline;
+}
+
+/*Ensure mobile responsiveness*/
+@media (max-width: 768px) {
+  /*Stack form and info sections vertically*/
+  .contact-container {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  /*Reduce the padding for smaller screens*/
+  .form-section,
+  .info-section {
+    padding: 20px;
+  }
+
+  /*Make the image scale properly*/
+  .info-image,
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*Slightly smaller font for the form title on smaller devices*/
+  .form-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /*Even more compact on very small screens*/
+  .form-section,
+  .info-section {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+  }
 }
